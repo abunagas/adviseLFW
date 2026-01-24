@@ -1171,3 +1171,41 @@ h3 {
     display: none;
   }
 }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none !important;
+  }
+
+  .section {
+    scroll-snap-align: none !important;
+    scroll-snap-stop: normal !important;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 80px 1.5rem !important;
+  }
+
+  .estetika-section {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+  }
+
+  .side-nav {
+    display: none !important;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .features-grid {
+    gap: 1rem !important;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
