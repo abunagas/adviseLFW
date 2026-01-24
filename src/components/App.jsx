@@ -19,6 +19,7 @@ function App() {
   const [lang, setLang] = useState('lt')
   const [isLight, setIsLight] = useState(false)
   const [activeSectionIndex, setActiveSectionIndex] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const t = translations[lang]
 
@@ -151,34 +152,55 @@ function App() {
   return (
     <div className={`app ${isEstetikaActive ? `theme-${activeTheme}` : ''} ${isLight ? 'theme-light' : ''}`}>
 
-      <nav className={scrolled ? 'scrolled' : ''}>
+      <nav className={`${scrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="container nav-content">
           <div className="logo">
             <img src={logo} alt="LV" style={{ width: '40px', height: '40px', filter: 'drop-shadow(0 0 5px var(--accent-primary))' }} />
             <span>LINTIVO</span>
           </div>
-          <div className="nav-links">
-            <a href="#pradzia">{t.nav.home}</a>
-            <a href="#paslaugos">{t.nav.services}</a>
-            <a href="#estetika">{t.nav.estetika}</a>
-            <a href="#procesas">{t.nav.process}</a>
-            <a href="#kainos">{t.nav.pricing}</a>
-            <a href="#apie-mus">{t.nav.about}</a>
-          </div>
 
-          <div className="nav-actions" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <div className="nav-controls" style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-              <button onClick={() => setLang(lang === 'lt' ? 'en' : 'lt')} className="control-btn glass" title="Change Language">
-                {lang.toUpperCase()}
-              </button>
-              <button onClick={() => setIsLight(!isLight)} className="control-btn glass" title="Toggle Theme">
-                {isLight ? '🌙' : '☀️'}
-              </button>
+          <button className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div className={`nav-wrapper ${isMenuOpen ? 'active' : ''}`}>
+            <div className="nav-links">
+              <a href="#pradzia" onClick={() => setIsMenuOpen(false)}>{t.nav.home}</a>
+              <a href="#paslaugos" onClick={() => setIsMenuOpen(false)}>{t.nav.services}</a>
+              <a href="#estetika" onClick={() => setIsMenuOpen(false)}>{t.nav.estetika}</a>
+              <a href="#procesas" onClick={() => setIsMenuOpen(false)}>{t.nav.process}</a>
+              <a href="#kainos" onClick={() => setIsMenuOpen(false)}>{t.nav.pricing}</a>
+              <a href="#apie-mus" onClick={() => setIsMenuOpen(false)}>{t.nav.about}</a>
             </div>
 
-            <a href="#kontaktai" className="btn btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}>
-              {t.nav.cta}
-            </a>
+            <div className="nav-actions">
+              <div className="nav-controls">
+                <button
+                  onClick={() => {
+                    setLang(lang === 'lt' ? 'en' : 'lt')
+                    if (window.innerWidth <= 768) setIsMenuOpen(false)
+                  }}
+                  className="control-btn glass"
+                >
+                  {lang.toUpperCase()}
+                </button>
+                <button
+                  onClick={() => {
+                    setIsLight(!isLight)
+                    if (window.innerWidth <= 768) setIsMenuOpen(false)
+                  }}
+                  className="control-btn glass"
+                >
+                  {isLight ? '🌙' : '☀️'}
+                </button>
+              </div>
+
+              <a href="#kontaktai" className="btn btn-primary nav-cta" onClick={() => setIsMenuOpen(false)}>
+                {t.nav.cta}
+              </a>
+            </div>
           </div>
         </div>
       </nav>
