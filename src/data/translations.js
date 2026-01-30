@@ -11,23 +11,23 @@ export const translations = {
             cta: 'Palikti užklausą'
         },
         hero: {
-            title: 'Advise advokatų kontora',
-            subtitle: 'Tavo patikimas ir sąžiningas partneris teisinių problemų sprendimui',
+            title: 'Jūsų patikimi patarėjai teisiniais klausimais',
+            subtitle: 'Ekspertai, teikiantys individualią pagalbą ir siekiantys geriausių rezultatų su pasitikėjimu ir kompetencija.',
             cards: [
                 {
-                    title: 'Advokato konsultacija',
+                    title: 'Konsultacija',
                     desc: 'Atsakysime į jums svarbius teisinius klausimus ir ieškosime sprendimo',
-                    cta: 'Sužinoti daugiau'
+                    cta: 'Plačiau'
                 },
                 {
-                    title: 'Dokumentų rengimas',
+                    title: 'Dokumentai',
                     desc: 'Padėsime jums parengti sudėtingus teisinius dokumentus teismui',
-                    cta: 'Sužinoti daugiau'
+                    cta: 'Plačiau'
                 },
                 {
-                    title: 'Atstovavimas teisme',
+                    title: 'Atstovavimas',
                     desc: 'Padėsime įgyvendinti jūsų teises teisme ir kitose institucijose',
-                    cta: 'Sužinoti daugiau'
+                    cta: 'Plačiau'
                 }
             ]
         },
@@ -78,23 +78,23 @@ export const translations = {
             cta: 'Leave an Inquiry'
         },
         hero: {
-            title: 'Advise Law Firm',
-            subtitle: 'Your reliable and honest partner for solving legal problems',
+            title: 'Your Trusted Advisors for Legal Solutions',
+            subtitle: 'Expert legal guidance tailored to your needs, delivering proven results with trust and excellence.',
             cards: [
                 {
-                    title: 'Legal Consultation',
-                    desc: 'We will answer your important legal questions and look for solutions',
-                    cta: 'Find out more'
+                    title: 'Consultation',
+                    desc: 'Expert legal consultation for your specific legal matters.',
+                    cta: 'More'
                 },
                 {
-                    title: 'Document Preparation',
-                    desc: 'We will help you prepare complex legal documents for court',
-                    cta: 'Find out more'
+                    title: 'Documentation',
+                    desc: 'Preparation and analysis of complex legal documentation.',
+                    cta: 'More'
                 },
                 {
-                    title: 'Court Representation',
-                    desc: 'We will help you implement your rights in court and other institutions',
-                    cta: 'Find out more'
+                    title: 'Representation',
+                    desc: 'Representation in courtrooms and during legal negotiations.',
+                    cta: 'More'
                 }
             ]
         },
